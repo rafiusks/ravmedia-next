@@ -1,71 +1,7 @@
 import Image from "next/image"
 import Tech from "../components/Tech"
 
-Home.title = "Home"
-
-const techStack = {
-	frontend: [
-		{
-			title: "React",
-			img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-			pill: "TechPillJavaScript",
-		},
-		{
-			title: "Laravel",
-			img: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
-			pill: "TechPillJavaScript",
-		},
-		{
-			title: "Vue 2/3",
-			img: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
-			pill: "TechPillJavascript",
-		},
-		{
-			title: "NuxtJS",
-			img: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg",
-			pill: "TechPillJavascript",
-		},
-		{
-			title: "Tailwind CSS",
-			img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
-			pill: "TechPillTailwind",
-		},
-	],
-	backend: [
-		{
-			title: "Node.js",
-			img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-			pill: "TechPillJavaScript",
-		},
-		{
-			title: "Laravel",
-			img: "https://laravel.com/img/logomark.min.svg",
-			pill: "TechPillPhp",
-		},
-		{
-			title: "Symfony",
-			img: "https://seeklogo.com/images/S/symfony-logo-AA34C8FC16-seeklogo.com.png",
-			pill: "TechPillPhp",
-		},
-		{
-			title: "AWS",
-			img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-			pill: "TechPillCloud",
-		},
-		{
-			title: "Azure",
-			img: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg",
-			pill: "TechPillCloud",
-		},
-		{
-			title: "GCP",
-			img: "https://seeklogo.com/images/G/google-cloud-logo-ADE788217F-seeklogo.com.png",
-			pill: "TechPillCloud",
-		},
-	],
-}
-
-export default function Home() {
+export default function Home({ techStack }) {
 	return (
 		<div>
 			<main className="container h-[80vh] mx-auto flex justify-between flex-col">
@@ -152,4 +88,72 @@ export default function Home() {
 			</section>
 		</div>
 	)
+}
+
+Home.title = "Home"
+
+Home.getInitialProps = async (ctx) => {
+	const techStack = {
+		frontend: [
+			{
+				title: "React",
+				img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+				pill: "TechPillJavaScript",
+			},
+			{
+				title: "Laravel",
+				img: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+				pill: "TechPillJavaScript",
+			},
+			{
+				title: "Vue 2/3",
+				img: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+				pill: "TechPillJavascript",
+			},
+			{
+				title: "NuxtJS",
+				img: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg",
+				pill: "TechPillJavascript",
+			},
+			{
+				title: "Tailwind CSS",
+				img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+				pill: "TechPillTailwind",
+			},
+		],
+		backend: [
+			{
+				title: "Node.js",
+				img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+				pill: "TechPillJavaScript",
+			},
+			{
+				title: "Laravel",
+				img: "https://laravel.com/img/logomark.min.svg",
+				pill: "TechPillPhp",
+			},
+			{
+				title: "Symfony",
+				img: "https://seeklogo.com/images/S/symfony-logo-AA34C8FC16-seeklogo.com.png",
+				pill: "TechPillPhp",
+			},
+			{
+				title: "AWS",
+				img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+				pill: "TechPillCloud",
+			},
+			{
+				title: "Azure",
+				img: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg",
+				pill: "TechPillCloud",
+			},
+			{
+				title: "GCP",
+				img: "https://seeklogo.com/images/G/google-cloud-logo-ADE788217F-seeklogo.com.png",
+				pill: "TechPillCloud",
+			},
+		],
+	}
+
+	return { techStack }
 }
